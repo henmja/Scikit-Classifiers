@@ -81,8 +81,6 @@ vectorizer_test = DictVectorizer()
 vec_test_x = vectorizer_test.fit_transform(dicts_test_x).toarray()
 
 from sklearn.naive_bayes import GaussianNB
-#train_x = np.array(train_x)
-#train_x=train_x.reshape(1,-1)
 clf = GaussianNB()
 clf.fit(vec_train_x, train_y)
 predictions = clf.predict(vec_test_x)
