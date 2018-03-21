@@ -38,6 +38,9 @@ def evaluate(predictions, true_labels):
     print("\tAccuracy:   ", correct / len(predictions))
     print("\tError rate: ", incorrect / len(predictions))
 
+def main():
+         
+         
 train_x, train_y, test_x, test_y = load_data("data/basketball.train.csv")
 
 from sklearn.feature_extraction import DictVectorizer
@@ -60,7 +63,7 @@ vectorizer_train = DictVectorizer()
 vec_train_x = vectorizer_train.fit_transform(dicts_train_x).toarray()
 
 dicts_test_x = []
-# TODO
+
 for x in test_x:
     d = {}
     for i, attr in enumerate(ATTRS):
@@ -82,3 +85,7 @@ clf = KNeighborsClassifier()
 clf.fit(vec_train_x, train_y)
 predictions = clf.predict(vec_test_x)
 evaluate(predictions, test_y)
+
+
+if __name__ == "__main__":
+    main()
