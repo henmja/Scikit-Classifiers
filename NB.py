@@ -53,7 +53,7 @@ for x in train_x:
             #save as floats the values for the already-numeric attributes from dataset, keep the rest as the 
             #strings they are
             d[attr] = val
-        if (i == 2) or (i==3) or (i==4) or (i==5) or (i==6) or (i==7) or (i==8) or (i==9) or (i==10) or (i==11):
+        if (i >= 2) and (i <= 11):
             val = float(x[i])#save as float
             d[attr] = val
     dicts_train_x.append(d)
@@ -72,7 +72,7 @@ for x in test_x:
             #save as floats the values for the already-numeric attributes from dataset, keep the rest as the 
             #strings they are
             d[attr] = val
-        if (i == 2) or (i==3) or (i==4) or (i==5) or (i==6) or (i==7) or (i==8) or (i==9) or (i==10) or (i==11):
+        if (i >= 2) and (i <= 11):
             val = float(x[i])#save as float
             d[attr] = val
     dicts_test_x.append(d)
