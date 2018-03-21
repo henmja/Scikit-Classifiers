@@ -36,6 +36,10 @@ def evaluate(predictions, true_labels):
     print("\tAccuracy:   ", correct / len(predictions))
     print("\tError rate: ", incorrect / len(predictions))
 
+         
+def main():
+     
+
 train_x, train_y, test_x, test_y = load_data("data/basketball.train.csv")
 
 from sklearn.feature_extraction import DictVectorizer
@@ -85,3 +89,7 @@ clf = GaussianNB()
 clf.fit(vec_train_x, train_y)
 predictions = clf.predict(vec_test_x)
 evaluate(predictions, test_y)
+
+
+if __name__ == "__main__":
+    main()
